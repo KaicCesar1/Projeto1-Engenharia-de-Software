@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gerenciamento de Competições Olímpicas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside id="menu" class="oculto">
+        <ul>
+            <li onclick="exibirFuncionalidade('criarCompeticao')">Criar Competição</li>
+            <li onclick="exibirFuncionalidade('configurarCompeticao')">Configurar Competição</li>
+            <li onclick="exibirFuncionalidade('adicionarAtleta')">Adicionar Atletas</li>
+            <li onclick="exibirFuncionalidade('sistemaAntidoping')">Sistema Antidoping</li>
+            <li onclick="exibirFuncionalidade('consultarCompeticao')">Consultar Competição</li>
+            <li onclick="exibirFuncionalidade('cancelarCompeticao')">Cancelar Competição</li>
+        </ul>
+    </aside>
+
+    <section id="funcionalidade">
+        
+        <div id="login">
+            <h2>Login do Administrador</h2>
+            <label>Email:</label>
+            <input type="email" id="email" required>
+            <label>Senha:</label>
+            <input type="password" id="senha" required>
+            <button onclick="fazerLogin()">Entrar</button>
+        </div>
+
+        <div id="criarCompeticao" class="oculto">
+            <h2>Criar Competição</h2>
+            <label>Nome da Competicao:</label>
+            <input type="text" id="nomeCompeticao">
+            <label>Descrição:</label>
+            <input type="text" id="descricaoCompeticao">
+            <label>Data de Abertura:</label>
+            <input type="date" id="dataAbertura">
+            <label>Data de Encerramento:</label>
+            <input type="date" id="dataEncerramento">
+            <label>País:</label>
+            <input type="text" id="paisCompeticao">
+            <label>Status:</label>
+            <input type="text" id="statusCompeticao" value="Ativo" readonly>
+            <button onclick="criarCompeticao()">Salvar Competição</button>
+        </div>
+
+        <div id="configurarCompeticao" class="oculto">
+            <h2>Configurar Competicao</h2>
+            <label>Selecione a Competicao:</label>
+            <select id="selecionarCompeticao"></select>
+            <label>Horário de Início:</label>
+            <input type="time" id="horarioInicio">
+            <label>Local:</label>
+            <input type="text" id="localCompeticao">
+            <label>Cidade:</label>
+            <input type="text" id="cidadeCompeticao">
+            <button onclick="configurarCompeticao()">Salvar Configuraçao</button>
+        </div>
+
+        <div id="adicionarAtleta" class="oculto">
+            <h2>Adicionar Atletas</h2>
+            <label>Nome do Atleta:</label>
+            <input type="text" id="nomeAtleta">
+            <label>Nacionalidade:</label>
+            <input type="text" id="nacionalidadeAtleta">
+            <label>Altura:</label>
+            <input type="number" id="alturaAtleta">
+            <label>Peso:</label>
+            <input type="number" id="pesoAtleta">
+            <label>Data de Nascimento:</label>
+            <input type="date" id="dataNascimentoAtleta">
+            <label>Gênero:</label>
+            <select id="generoAtleta">
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Femininoo</option>
+            </select>
+            <label>Status:</label>
+            <select id="statusAtleta">
+                <option value="Confirmado">Confirmado</option>
+                <option value="Desclassificado">Desclassificado</option>
+            </select>
+            <button onclick="adicionarAtleta()">Salvar Atleta</button>
+        </div>
+
+        <div id="sistemaAntidoping" class="oculto">
+            <h2>Sistema Antdoping</h2>
+            <label>Selecione o Atleta:</label>
+            <select id="selecionarAtleta"></select>
+            <label>Resultado do Teste:</label>
+            <select id="resultadoAntidoping">
+                <option value="Aprovado">Aprovado</option>
+                <option value="Desclassificado">Desclassificado</option>
+            </select>
+            <button onclick="salvarAntidoping()">Salvar Resultado</button>
+        </div>
+
+        <div id="consultarCompeticao" class="oculto">
+            <h2>Consultar Competições</h2>
+            <ul id="listaCompeticoes"></ul>
+        </div>
+
+        <div id="cancelarCompeticao" class="oculto">
+            <h2>Cancelar Competição</h2>
+            <label>Selecione a Competição:</label>
+            <select id="selecionarCompeticaoCancelar"></select>
+            <button style="background-color: red; color: #fff;" onclick="cancelarCompeticao()">Cancelar Competição</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
