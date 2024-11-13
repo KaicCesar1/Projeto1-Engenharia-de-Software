@@ -88,10 +88,21 @@
             <h2>Sistema Antdoping</h2>
             <label>Selecione o Atleta:</label>
             <select id="selecionarAtleta"></select>
+
+            <label>Quantos kits foram usados:</label>
+            <input type="number" id="numeroDeKits">
+
+            <label>Médico responsável:</label>
+            <input type="text" id="medicoResponsavel">
+
             <label>Resultado do Teste:</label>
             <select id="resultadoAntidoping">
-                <option value="Aprovado">Aprovado</option>
-                <option value="Desclassificado">Desclassificado</option>
+                <option value="Aprovado">Negativo</option>
+                <option value="Multa">Multa</option>
+                <option value="Suspensao">Suspensão</option>
+                <option value="Exclusao">Exclusão</option>
+                <option value="Expulsão">Expulsão</option>
+                <option value="Banimento">Banimento</option>
             </select>
             <button onclick="salvarAntidoping()">Salvar Resultado</button>
         </div>
